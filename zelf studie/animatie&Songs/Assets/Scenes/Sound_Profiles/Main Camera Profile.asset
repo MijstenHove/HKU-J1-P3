@@ -109,7 +109,7 @@ MonoBehaviour:
     value: 1
   gradingMode:
     overrideState: 1
-    value: 1
+    value: 0
   externalLut:
     overrideState: 0
     value: {fileID: 0}
@@ -153,10 +153,10 @@ MonoBehaviour:
     value: {r: 0.6367924, g: 0.87537193, b: 1, a: 1}
   hueShift:
     overrideState: 1
-    value: 0
+    value: 17
   saturation:
     overrideState: 1
-    value: 29
+    value: 67
   brightness:
     overrideState: 0
     value: 0
