@@ -6,12 +6,16 @@ public class C_PlayerController : MonoBehaviour
 {
     public float f_mouseSensitivety = 100f;
     public float speed = 0.1f;
+    public float gravity = -9.8f;
     float angleX;
     float angleY;
 
     CharacterController controller;
 
     public Transform camara;
+
+    Vector3 velocity;
+    
 
 
     // Start is called before the first frame update
@@ -78,6 +82,9 @@ public class C_PlayerController : MonoBehaviour
 
         controller.Move(move * speed * Time.deltaTime);
 
+        velocity.y += gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
     }
 
 
