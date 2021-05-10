@@ -6,8 +6,8 @@ public class C_Shoot : MonoBehaviour
 {
     public float damage = 10;
     public float range = 100;
-
-   public Camera fpsCam;
+    public Camera fpsCam;
+    public ParticleSystem gunflash;
 
 	// raykast 
 	// patical 
@@ -21,6 +21,7 @@ public class C_Shoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            gunflash.Play();
             Shoot();
         }
     }
@@ -30,6 +31,7 @@ public class C_Shoot : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             // play partical
+            
             Debug.Log(hit.transform.name);
         }
     }
