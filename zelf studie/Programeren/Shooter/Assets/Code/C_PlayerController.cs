@@ -7,8 +7,11 @@ public class C_PlayerController : MonoBehaviour
     public float f_mouseSensitivety = 100f;
     public float speed = 0.1f;
     public float gravity = -9.8f;
+    public float jump;
     float angleX;
     float angleY;
+
+    public bool isgrounded;
 
     CharacterController controller;
 
@@ -72,7 +75,7 @@ public class C_PlayerController : MonoBehaviour
         }
     }
 
-    //movement with character controler v2  breaky
+    //movement with character controler v2  breackays
     public void movingplayer2()
     {
         float x = Input.GetAxis("Horizontal");
@@ -85,8 +88,13 @@ public class C_PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            Debug.Log("fire");
+            velocity.y = jump;
+        }
     }
-
-
 
 }

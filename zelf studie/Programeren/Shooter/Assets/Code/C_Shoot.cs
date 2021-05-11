@@ -6,8 +6,11 @@ public class C_Shoot : MonoBehaviour
 {
     public float damage = 10;
     public float range = 100;
+
+    public float impactforce = 30;
     public Camera fpsCam;
     public ParticleSystem gunflash;
+    public GameObject inpect;
 
 	// raykast 
 	// patical 
@@ -30,9 +33,21 @@ public class C_Shoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            // play partical
+            C_Target target = hit.transform.GetComponent<C_Target>();
+            if (target != null) 
+            {
+                target.Damage(damage);
+            }
+
+            if (hit.rigidbody != null) 
+            {
+                hit.rigidbody.AddForce(-hit.normal * impactforce);
             
-            Debug.Log(hit.transform.name);
+            }
+
+            GameObject impactgo = Instantiate(inpect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(impactgo, 3f);
+
         }
     }
 }
