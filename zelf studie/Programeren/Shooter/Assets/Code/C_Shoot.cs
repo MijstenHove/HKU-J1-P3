@@ -12,10 +12,6 @@ public class C_Shoot : MonoBehaviour
     public ParticleSystem gunflash;
     public GameObject inpect;
 
-	// raykast 
-	// patical 
-
-
 	private void Start()
 	{
        
@@ -24,15 +20,19 @@ public class C_Shoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+           
             gunflash.Play();
             Shoot();
         }
     }
     public void Shoot() 
     {
+        
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
+            
+            print("hit") ;
             C_Target target = hit.transform.GetComponent<C_Target>();
             if (target != null) 
             {

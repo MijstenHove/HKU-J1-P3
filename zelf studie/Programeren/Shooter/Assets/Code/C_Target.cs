@@ -10,14 +10,13 @@ public class C_Target : MonoBehaviour
         health -= damage;
         if (health <= 0f)
         {
-            // add force 
+
             Die();
         }
     }
 
     void Die()
     {
-       // die animation 
         Destroy(gameObject);
     }
     
