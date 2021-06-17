@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public enum StateEnum { Idle, Run, Walk, Search };
+public enum StateEnum1 { Idle, Run, Walk, Search };
 
 public class C_LesState : MonoBehaviour
 {
     // control rr voor dyslct fouten 
 
-    private NavMeshAgent enemy;
+   /* private NavMeshAgent enemy;
     private Transform enemyplayer;
 
     public Transform[] waypoint;
@@ -18,7 +18,7 @@ public class C_LesState : MonoBehaviour
     float timer = 3;
 
     private Transform targetWayPoint;
-    [SerializeField] private Transform currendWaPoint;
+    [SerializeField] private Transform currendWayPoint;
 
     [SerializeField] private StateEnum state;
 
@@ -37,7 +37,7 @@ public class C_LesState : MonoBehaviour
       
         }
         else
-            currendWaPoint = waypoint[0];
+            currendWayPoint = waypoint[0];
 
         CheckState();
     }
@@ -46,7 +46,7 @@ public class C_LesState : MonoBehaviour
 
         switch (state) 
         {
-            case StateEnum.Idle: IdleBehaviour(); break;
+           // case StateEnum.Idle: IdleBehaviour(); break;
             case StateEnum.Run: RunningBehaviour(); break;
             case StateEnum.Walk: WalkBehaviour(); break;
             case StateEnum.Search: SearchBehaviour(); break;
@@ -72,12 +72,13 @@ public class C_LesState : MonoBehaviour
     }
     void WalkBehaviour()
     {
-       // if (Vector3.Distance(transform.position, enemyplayer.position) < running)
-       // {
-       //     enemy.destination = targetWayPoint.position;
+        // if (Vector3.Distance(transform.position, enemyplayer.position) < running)
+        // {
+       // enemy.destination = currendWayPoint;
        // }
         print("walk");
         // is opweg naar de plak van seurtch 
+
     }
     void SearchBehaviour()
     {
@@ -89,8 +90,8 @@ public class C_LesState : MonoBehaviour
     {
         switch (newState)
         {
-            case StateEnum.Idle:
-                break;
+          //  case StateEnum.Idle:
+            //    break;
             case StateEnum.Run:
                 break;
             case StateEnum.Walk:
@@ -100,5 +101,5 @@ public class C_LesState : MonoBehaviour
         }
 
         state = newState;
-    }
+    }/*/
 }

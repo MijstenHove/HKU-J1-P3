@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class C_Shoot : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class C_Shoot : MonoBehaviour
     public ParticleSystem gunflash;
     public GameObject inpect;
 
+
+    public Text score;
+    public int scorecount = 0; 
 	private void Start()
 	{
        
@@ -37,6 +41,8 @@ public class C_Shoot : MonoBehaviour
             if (target != null) 
             {
                 target.Damage(damage);
+                scorecount++;
+                score.text = scorecount.ToString();
             }
 
             if (hit.rigidbody != null) 

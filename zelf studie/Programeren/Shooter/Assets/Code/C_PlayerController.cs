@@ -18,10 +18,7 @@ public class C_PlayerController : MonoBehaviour
     public Transform camara;
 
     Vector3 velocity;
-    
 
-
-    // Start is called before the first frame update
     void Start()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -29,7 +26,6 @@ public class C_PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Lookingaround();

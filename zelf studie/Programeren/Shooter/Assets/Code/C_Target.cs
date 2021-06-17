@@ -17,6 +17,7 @@ public class C_Target : MonoBehaviour
 
     void Die()
     {
+
         Destroy(gameObject);
     }
     
