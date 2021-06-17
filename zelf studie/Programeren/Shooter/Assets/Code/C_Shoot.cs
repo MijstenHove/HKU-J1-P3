@@ -36,18 +36,7 @@ public class C_Shoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            
-            print(hit.collider.tag) ;
-            C_pickup pickup = hit.transform.GetComponent<C_pickup>();
             C_Target target = hit.transform.GetComponent<C_Target>();
-
-
-            //verbeteren 
-            if (hit.collider.tag == "boost")
-            {
-                damage = damage + 10; 
-            }
-           
 
             if (target != null) 
             {
