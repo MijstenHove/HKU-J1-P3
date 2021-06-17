@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class C_Shoot : MonoBehaviour
 {
     public float damage = 10;
-    public float range = 100;
+    public float range = 50;
 
     public float impactforce = 30;
     public Camera fpsCam;
@@ -27,6 +27,7 @@ public class C_Shoot : MonoBehaviour
            
             gunflash.Play();
             Shoot();
+
         }
     }
     public void Shoot() 
@@ -36,8 +37,18 @@ public class C_Shoot : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             
-            print("hit") ;
+            print(hit.collider.tag) ;
+            C_pickup pickup = hit.transform.GetComponent<C_pickup>();
             C_Target target = hit.transform.GetComponent<C_Target>();
+
+
+            //verbeteren 
+            if (hit.collider.tag == "boost")
+            {
+                damage = damage + 10; 
+            }
+           
+
             if (target != null) 
             {
                 target.Damage(damage);

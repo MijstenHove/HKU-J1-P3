@@ -62,7 +62,6 @@ public class C_AiRunning : MonoBehaviour
 
         if (Physics.Raycast(walkpoint, -transform.up, 2f, watGroud))
             walkpointset = true;
-
     }
 
     void running()

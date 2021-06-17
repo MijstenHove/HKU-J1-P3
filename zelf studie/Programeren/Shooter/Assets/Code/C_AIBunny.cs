@@ -57,7 +57,6 @@ public class C_AIBunny : MonoBehaviour
 
     void SearchingWalkingPoint()
     {
-        print("idel");
         timer -= Time.deltaTime;
         if (timer < 0)
         {
@@ -68,7 +67,6 @@ public class C_AIBunny : MonoBehaviour
 
             if (Physics.Raycast(walkpoint, -transform.up, 2f, watGroud))
                 walkpointset = true;
-        
         }
     }
 
