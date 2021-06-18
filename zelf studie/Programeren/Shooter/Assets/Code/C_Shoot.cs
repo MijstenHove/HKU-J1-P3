@@ -16,10 +16,7 @@ public class C_Shoot : MonoBehaviour
 
     public Text score;
     public int scorecount = 0; 
-	private void Start()
-	{
-       
-	}
+
 	void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -52,8 +49,7 @@ public class C_Shoot : MonoBehaviour
             }
 
             GameObject impactgo = Instantiate(inpect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactgo, 3f);
-
+            Destroy(impactgo, 3f)
         }
     }
 }
