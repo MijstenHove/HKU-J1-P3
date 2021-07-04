@@ -17,13 +17,13 @@ public class C_Shoot : MonoBehaviour
     public Text score;
     public int scorecount = 0; 
 
-	void Update()
+	void FixedUpdate()
     {
         if (Input.GetButtonDown("Fire1"))
         {
            
             gunflash.Play();
-            Shoot();
+            Shoot(); 
 
         }
     }
@@ -34,7 +34,7 @@ public class C_Shoot : MonoBehaviour
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
             C_Target target = hit.transform.GetComponent<C_Target>();
-
+            print(hit.transform.name);
             if (target != null) 
             {
                 target.Damage(damage);
@@ -49,7 +49,7 @@ public class C_Shoot : MonoBehaviour
             }
 
             GameObject impactgo = Instantiate(inpect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactgo, 3f)
+            Destroy(impactgo, 3f);
         }
     }
 }

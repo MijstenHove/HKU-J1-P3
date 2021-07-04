@@ -31,7 +31,7 @@ public class C_AIBunny : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         playerInSifght = Physics.CheckSphere(transform.position, SightRange, watPlayer);
         playerInAttack = Physics.CheckSphere(transform.position, AttackRange, watPlayer);

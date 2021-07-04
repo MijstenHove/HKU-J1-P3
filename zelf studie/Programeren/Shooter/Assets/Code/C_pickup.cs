@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class C_pickup : MonoBehaviour
 {
-	public GameObject player; 
-	void OnCollisionEnter(Collision collision) 
+	public float damageAmount;
+	void OnCollisionEnter(Collision collision)
 	{
-		print(collision.collider.name);
-		C_Shoot pickup = collision.transform.GetComponent<C_Shoot>();
+		print("this is colilding " + collision.collider.name);
+		C_Shoot player_ = collision.transform.GetComponent<C_Shoot>();
 
-		if (pickup != null)
+		if (collision.gameObject.tag == "Player")
 		{
-			pickup.damage = pickup.damage + 10;
+			player_.damage = player_.damage + 20;
 			Destroy(gameObject);
 		}
 
+	}
+	void OnCollisionStay(Collision collision)
+	{
+		print("this is staying " + collision.collider.name);
 	}
 }
